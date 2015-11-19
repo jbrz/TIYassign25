@@ -18,6 +18,7 @@ let HomeController = function($scope, PARSE, HomeService) {
       vm.errMsg1 = 'You have a name!';
     } else {
       vm.errMsg1 = 'You must enter a name!';
+      vm.errMsg1.css('color','red');
     }
   };
 
@@ -34,12 +35,13 @@ let HomeController = function($scope, PARSE, HomeService) {
   });
 
   let validEmail = function(x) {
-    let a = x.includes('@','.');
+    let y = x.includes('@','.');
 
-    if (a === true) {
+    if (y === true) {
       vm.errMsg2 = 'You have an email!';
     } else {
       vm.errMsg2 = 'You must enter a valid email address with an @ and a domain (.com, .net, etc.)!';
+      vm.errMsg2.css('color','red');
     }
   };
 
@@ -57,6 +59,7 @@ let HomeController = function($scope, PARSE, HomeService) {
       vm.errMsg3 = "You've got a website!";
     } else {
       vm.errMsg3 = 'You must enter a valid web address containing http:// or https:// !';
+      // .css('color','red');
     }
   };
 
@@ -72,6 +75,7 @@ let HomeController = function($scope, PARSE, HomeService) {
       vm.errMsg4 = 'Thanks for contacting us! Please press submit.';
     } else {
       vm.errMsg4 = "You can't leave this blank!";
+      vm.errMsg4.css('color','red');
     }
   };
 
