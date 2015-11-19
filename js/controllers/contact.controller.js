@@ -1,12 +1,13 @@
 let ContactController = function($scope, PARSE, ContactService) {
   
   let vm = this;
-  vm.title = 'Submissions';
+  vm.title = 'Contacts';
   vm.contact = getContact();
 
   function getContact() {
-    ContactService.getContact().then( (response) => {
-      vm.contact = response.data.results;
+    ContactService.getContact().then( (res) => {
+      console.log(res.data.results);
+      vm.contact = res.data.results;
     });
   }
 

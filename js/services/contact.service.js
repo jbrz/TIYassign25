@@ -2,9 +2,9 @@ let ContactService = function($http, PARSE) {
   
   let url = PARSE.URL + 'classes/contact';
 
-  this.getSubmissions = getSubmissions;
+  this.getContact = getContact;
 
-  function getSubmissions () {
+  function getContact () {
     return $http.get(url, PARSE.CONFIG);
   }
 

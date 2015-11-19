@@ -14,7 +14,7 @@ let config = function($stateProvider, $urlRouterProvider) {
     .state('root.contacts', {
       url: '/contacts',
       controller: 'ContactController as vm',
-      templateUrl: 'templates/contacts.tpl.html'
+      templateUrl: 'templates/contact.tpl.html'
     })
   ;
 

@@ -4,8 +4,8 @@ let HomeController = function($scope, PARSE, HomeService) {
   vm.newContact = newContact;
   vm.title = 'Contact';
 
-  function newContact (x) {
-    HomeService.newContact(x).then( (response) => {
+  function newContact (conObj) {
+    HomeService.newContact(conObj).then( (response) => {
       $scope.conObj = {};
     });
   }
@@ -47,7 +47,7 @@ let HomeController = function($scope, PARSE, HomeService) {
 
   $scope.$watch('conObj.website', function (newVal, prevVal) {
     if(!newVal) return;
-    validateWebsite(newVal);
+    validWebsite(newVal);
   });
 
   let validWebsite = function(x) {
@@ -64,7 +64,7 @@ let HomeController = function($scope, PARSE, HomeService) {
 
   $scope.$watch('conObj.message', function (newVal, prevVal) {
     if(!newVal) return;
-    validateMessage(newVal);
+    validMessage(newVal);
   });
 
   let validMessage = function(x) {

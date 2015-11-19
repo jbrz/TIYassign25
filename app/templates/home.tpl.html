@@ -1,10 +1,11 @@
-<h2>{{ vm.title }}</h2>
+<h3>{{ vm.title }}</h3>
 
 <form ng-submit="vm.newContact(conObj)">
   <small>{{ vm.errMsg1 }}</small>
   <input placeholder="Name" ng-model="conObj.name">
+
   <small>{{ vm.errMsg2 }}</small>
-  <input type="E-mail" placeholder="Email" ng-model="conObj.email">
+  <input placeholder="Email" ng-model="conObj.email">
 
   <small>{{ vm.errMsg3 }}</small>
   <input placeholder="Website" ng-model="conObj.website">

@@ -2,11 +2,11 @@
 <h3>{{ vm.title }}</h3>
 
 
-<ul ng-repeat="contacts in vm.contact">
+<ul class="contacts" ng-repeat="contacts in vm.contact">
   <li>
-    Name: {{ contact.name }}
-    Email: {{ contact.email }}
-    Website: {{ contact.website }}
-    Message: {{ contact.message }}
+    <p>Name: {{ contacts.name }}</p>
+    <p>Email: {{ contacts.email }}</p>
+    <p>Website: {{ contacts.website }}</p>
+    <p>Message: {{ contacts.message }}</p>
   </li>
 </ul>

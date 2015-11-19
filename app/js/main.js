@@ -17,7 +17,7 @@ var config = function config($stateProvider, $urlRouterProvider) {
   }).state('root.contacts', {
     url: '/contacts',
     controller: 'ContactController as vm',
-    templateUrl: 'templates/contacts.tpl.html'
+    templateUrl: 'templates/contact.tpl.html'
   });
 };
 
@@ -53,12 +53,13 @@ Object.defineProperty(exports, '__esModule', {
 var ContactController = function ContactController($scope, PARSE, ContactService) {
 
   var vm = this;
-  vm.title = 'Submissions';
+  vm.title = 'Contacts';
   vm.contact = getContact();
 
   function getContact() {
-    ContactService.getContact().then(function (response) {
-      vm.contact = response.data.results;
+    ContactService.getContact().then(function (res) {
+      console.log(res.data.results);
+      vm.contact = res.data.results;
     });
   }
 };
@@ -80,8 +81,8 @@ var HomeController = function HomeController($scope, PARSE, HomeService) {
   vm.newContact = newContact;
   vm.title = 'Contact';
 
-  function newContact(x) {
-    HomeService.newContact(x).then(function (response) {
+  function newContact(conObj) {
+    HomeService.newContact(conObj).then(function (response) {
       $scope.conObj = {};
     });
   }
@@ -122,7 +123,7 @@ var HomeController = function HomeController($scope, PARSE, HomeService) {
 
   $scope.$watch('conObj.website', function (newVal, prevVal) {
     if (!newVal) return;
-    validateWebsite(newVal);
+    validWebsite(newVal);
   });
 
   var validWebsite = function validWebsite(x) {
@@ -139,7 +140,7 @@ var HomeController = function HomeController($scope, PARSE, HomeService) {
 
   $scope.$watch('conObj.message', function (newVal, prevVal) {
     if (!newVal) return;
-    validateMessage(newVal);
+    validMessage(newVal);
   });
 
   var validMessage = function validMessage(x) {
@@ -211,9 +212,9 @@ var ContactService = function ContactService($http, PARSE) {
 
   var url = PARSE.URL + 'classes/contact';
 
-  this.getSubmissions = getSubmissions;
+  this.getContact = getContact;
 
-  function getSubmissions() {
+  function getContact() {
     return $http.get(url, PARSE.CONFIG);
   }
 };
