@@ -1,0 +1,16 @@
+<h2>{{ vm.title }}</h2>
+
+<form ng-submit="vm.newContact(conObj)">
+  <small>{{ vm.errMsg1 }}</small>
+  <input placeholder="Name" ng-model="conObj.name">
+  <small>{{ vm.errMsg2 }}</small>
+  <input type="E-mail" placeholder="Email" ng-model="conObj.email">
+
+  <small>{{ vm.errMsg3 }}</small>
+  <input placeholder="Website" ng-model="conObj.website">
+
+  <small>{{ vm.errMsg4 }}</small>
+  <textarea  placeholder="Your Message." ng-model="conObj.message"></textarea>
+
+  <button>Submit Form</button>
+</form>
