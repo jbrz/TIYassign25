@@ -1,7 +1,6 @@
-## Welcome to My Project
+## Welcome to the Angular Contact Form
 
-> I am your Readme.md file, you should probably update me.
-
+This is a simple Angular-based form that would be used to contact the website in question.  It's hideous as an omage to the 'grammer' of my instructors, so I apologize in advance for that.
 
 ## Usage
 
